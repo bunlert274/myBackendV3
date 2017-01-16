@@ -1,10 +1,10 @@
 {
   "name": "myBackendV3",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Easy theme for using make via [Bulma.io](http://bulma.io). Few to change original class. Can you know [Bulma.io](http://bulma.io) you can use it!",
   "scripts": {
     "start": "gulp",
-    "pro_d": "gulp"
+    "pro_d": "gulp production"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/bunlert274/myBackendV3/issues"
   },
-  "homepage": "https://github.com/bunlert274/myBackendV3#readme"
+  "homepage": "https://github.com/bunlert274/myBackendV3#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.6",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0"
+  }
 }

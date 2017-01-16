@@ -8,23 +8,28 @@
   var rename        = require('gulp-rename')
   var sourcemaps    = require('gulp-sourcemaps')
   var autoprefixer  = require('gulp-autoprefixer')
+  var del           = require('del')
 
   var sassOptions = {errLogToConsole: true, outputStyle: 'expanded'}
   var autoprefixerOptions = ['last 2 versions', '> 5%', 'Firefox ESR']
 
+  gulp.task('clean:build', function() {
+    return del.sync(['./build/css/**'], ['./build/js/**'])
+  })
+
   gulp.task('scripts', function() {
     return gulp.src('./source/script/**/*.js')
+      .pipe(sourcemaps.init())
       .pipe(concat('mybackendv3.js'))
+      .pipe(sourcemaps.write())
       .pipe(gulp.dest('./build/js/'))
   })
 
   gulp.task('js_prod', function() {
-    return gulp.src(basefiles)
-      .pipe(sourcemaps.init())
+    return gulp.src('./source/script/**/*.js')
       .pipe(concat('mybackendv3.js'))
       .pipe(rename('mybackendv3.min.js'))
       .pipe(uglify())
-      .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('./build/js/'))
   })
 
@@ -41,7 +46,7 @@
     gulp.src('./source/css/mybackendv3.sass')
       .pipe(sass({ outputStyle: 'compressed' }))
       .pipe(autoprefixer(autoprefixerOptions))
-      .pipe(gulp.dest('./build/js/'))      
+      .pipe(gulp.dest('./build/css/'))
   })
 
   gulp.task('browser-sync', function() {

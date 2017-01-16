@@ -1,3 +1,6 @@
 .vscode
 node_modules
 .gulp-scss-cache
+build/css/*
+build/js/*
+npm-debug.*
