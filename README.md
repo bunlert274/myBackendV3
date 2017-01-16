@@ -3,9 +3,9 @@ This is theme for admin & controlpanel application build within [Bulma.io](http:
 
 # Installation
 * clone project to you'r machine
-`git clone https://github.com/bunlert274/mybackendv3`
+`git clone https://github.com:bunlert274/myBackendV3.git`
 * when successfully
-`cd mybackendv3 && npm install`
+`cd myBackendV3 && npm install`
 * You can build to development and can open in you'r browsers `http://127.0.0.1:3000`
 `npm start`
 * Run in production you have get a minify
